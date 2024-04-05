@@ -1,1 +1,50 @@
 /*  your css code here. If applicable */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.panel {
+  width: 200px;
+  height: 300px;
+  margin: 0 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.panel.active {
+  flex: 2;
+}
+
+.panel:not(.active) {
+  flex: 1;
+}
+
+.panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-text {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.panel.active .img-text {
+  visibility: visible;
+}
+
+.panel:not(.active) .img-text {
+  visibility: hidden;
+}
